@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-sm-offset-1 col-sm-6">
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th class="text-center">Badge Name</th>
+                <th class="text-center">Level</th>
+                <th class="text-center">Skype</th>
+            </tr>
+            <tr ng-repeat="user in main.users">
+                <td>{{user.badgeName}}</td>
+                <td ng-switch="user.level">
+
+                </td>
+                <td>{{user.skypeLogin}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <form class="col-sm-4 form-horizontal" role="form">
+        <div class="form-group">
+            <label class="control-label col-sm-4" for="badge-name">Badge name</label>
+            <div class="col-sm-8">
+                <input ng-model="main.newUser.badgeName" class="form-control" type="text" id="badge-name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4" for="level">Level</label>
+            <div class="col-sm-8">
+                <input ng-model="main.newUser.level" class="form-control" type="number" id="level">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4" for="skype">Skype</label>
+            <div class="col-sm-8">
+                <input ng-model="main.newUser.skypeLogin" class="form-control" type="text" id="skype">
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" ng-click="main.addNewUser()" class="btn btn-success col-xs-12">Add</button>
+        </div>
+    </form>
+</div>
