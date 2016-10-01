@@ -17,7 +17,7 @@
         function addNewUser() {
 
             $http
-                .post("api/users", vm.newUser)
+                .post("/api/users", vm.newUser)
                 .then(_refreshListOfUsers);
             vm.newUser = {};
         }
@@ -25,7 +25,7 @@
         //private methods
         function _refreshListOfUsers() {
             $http
-                .get("api/users")
+                .get("/api/users")
                 .then(function (users) {
                     vm.users = users.data;
                 });
